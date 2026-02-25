@@ -131,8 +131,9 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] private   readonly SharedStunSystem _stun = default!;
     [Dependency] private   readonly SharedColorFlashEffectSystem _color = default!;
     [Dependency] private   readonly SharedCameraRecoilSystem _recoil = default!;
-    [Dependency] private   readonly IConfigurationManager _config = default!;
+    [Dependency] private   readonly IConfigurationManager _config = default!
 
+    public const float ProjectileSpeed = 40f;
     private const float InteractNextFire = 0.3f;
     private const double SafetyNextFire = 0.5;
     private const float EjectOffset = 0.4f;
@@ -973,7 +974,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         _recoil.KickCamera(user.Value, recoil.Normalized() * 0.5f * recoilScalar);
     }
 
-    public virtual void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid gunUid, EntityUid? user = null, float speed = 20f)
+    public virtual void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid gunUid, EntityUid? user = null, float speed = projectileSpeed)
     {
         var physics = EnsureComp<PhysicsComponent>(uid);
         Physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
