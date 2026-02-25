@@ -39,6 +39,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
+  projectileSpeed:100
   name: BaseWeaponLightMachineGun
   parent: BaseItem
   id: BaseWeaponLightMachineGun
