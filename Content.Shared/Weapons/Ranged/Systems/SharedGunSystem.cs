@@ -133,7 +133,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] private   readonly SharedCameraRecoilSystem _recoil = default!;
     [Dependency] private   readonly IConfigurationManager _config = default!
 
-    public const float ProjectileSpeed = 40f;
+    public const float projectileSpeed = 40f;
     private const float InteractNextFire = 0.3f;
     private const double SafetyNextFire = 0.5;
     private const float EjectOffset = 0.4f;
