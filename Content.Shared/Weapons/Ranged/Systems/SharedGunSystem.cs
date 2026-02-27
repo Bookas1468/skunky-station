@@ -131,7 +131,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] private   readonly SharedStunSystem _stun = default!;
     [Dependency] private   readonly SharedColorFlashEffectSystem _color = default!;
     [Dependency] private   readonly SharedCameraRecoilSystem _recoil = default!;
-    [Dependency] private   readonly IConfigurationManager _config = default!
+    [Dependency] private   readonly IConfigurationManager _config = default!;
 
     public const float projectileSpeed = 40f;
     private const float InteractNextFire = 0.3f;
